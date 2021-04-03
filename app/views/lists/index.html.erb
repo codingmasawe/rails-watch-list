@@ -1,7 +1,12 @@
 <h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+<p>These are all the lists</p>
 
+<ul>
+  <% @lists.each do |l| %>
+    <li>
+      <%= l.name %>:
+      <%= link_to "Check this", list_path(l) %>
+    </li>
+  <% end %>
+</ul>
 
-<% @lists.each do |l| %>
-<%= l.name %>
-<% end %>
