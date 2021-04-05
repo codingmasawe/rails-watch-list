@@ -3,12 +3,16 @@ class BookmarksController < ApplicationController
     @bookmarks = Bookmark.all
   end
 
+  def show
+    @bookmark = Bookmark.find(params[:id])
+  end
+
   def new
-    @Bookmark = Bookmark.new
+    @bookmark = Bookmark.new
   end
 
   def create
-    @Bookmark = Bookmark.new(bookmark_params)
+    @bookmark = Bookmark.new(bookmark_params)
     if @bookmark.save
       redirect_to @bookmark
     else
